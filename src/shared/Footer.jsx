@@ -11,7 +11,7 @@ export const Footer = () => {
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <img src="https://avatars.githubusercontent.com/u/85906328?v=4" alt="avatar-github" className="avatar-github" />
           <Typography variant="body2" color="primary" align="center">
-            {tab}Mario Hernández Profe "Tachi"
+            {tab}Mario Hernández Profe Tachi
           </Typography>
         </Box>
         <Typography variant="body2" color="primary" align="center">
