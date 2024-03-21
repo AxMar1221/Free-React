@@ -1,12 +1,10 @@
-
-import { Link } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
 
   return (
     <nav
-      className="navbar navbar-expand-sm navbar-dark bg-dark"
+      className="navbar navbar-expand-sm navbar-dark bg-success"
       style={{ position: "fixed", width: "100%", zIndex: 100 }}
     >
 
@@ -40,7 +38,7 @@ export const Navbar = () => {
             className={({ isActive }) =>
               `nav-item nav-link ${isActive ? "active" : ""}`
             }
-            to="/"
+            to="/projects"
           >
             Proyectos y Demos
           </NavLink>

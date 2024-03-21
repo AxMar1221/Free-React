@@ -1,6 +1,11 @@
+import { Typography } from "@mui/material"
 
 export const ServicesPage = () => {
   return (
-    <div className="footer">ServicesPage</div>
+    <div className="container">
+      <Typography color="primary" align="center">
+        ServicesPage
+      </Typography>
+    </div>
   )
 }
