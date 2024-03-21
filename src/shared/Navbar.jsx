@@ -1,49 +1,72 @@
+import { AppBar, Container, MenuItem, Toolbar, Typography } from "@mui/material"
+import LaptopIcon from '@mui/icons-material/Laptop';
 import { NavLink } from "react-router-dom";
 
+
 export const Navbar = () => {
-
   return (
-    <nav
-      className="navbar navbar-expand-sm navbar-dark bg-success"
-      style={{ position: "fixed", width: "100%", zIndex: 100 }}
-    >
-
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          <NavLink
-            className={({ isActive }) =>
-              `nav-item nav-link ${isActive ? "active" : ""}`
-            }
-            to="/hero"
-          >
-            Inicio
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              `nav-item nav-link ${isActive ? "active" : ""}`
-            }
-            to="/services"
-          >
-            Servicios
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              `nav-item nav-link ${isActive ? "active" : ""}`
-            }
-            to="/form"
-          >
-            Contacto
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              `nav-item nav-link ${isActive ? "active" : ""}`
-            }
-            to="/projects"
-          >
-            Proyectos y Demos
-          </NavLink>
-        </div>
-      </div>
-    </nav>
-  );
-};
+    <>
+      <AppBar position="static" color="success">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters >
+            <LaptopIcon sx={{ mr: 1 }} />
+            <Typography
+              variant="h6"
+              sx={{
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              Profe Tachi
+            </Typography>
+            <MenuItem>
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-item nav-link ${isActive ? "active" : ""}`
+                }
+                to="/hero"
+              >
+                Inicio
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-item nav-link ${isActive ? "active" : ""}`
+                }
+                to="/services"
+              >
+                Servicios
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-item nav-link ${isActive ? "active" : ""}`
+                }
+                to="/form"
+              >
+                Contacto
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-item nav-link ${isActive ? "active" : ""}`
+                }
+                to="/projects"
+              >
+                Proyectos y Demos
+              </NavLink>
+            </MenuItem>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </>
+  )
+}
