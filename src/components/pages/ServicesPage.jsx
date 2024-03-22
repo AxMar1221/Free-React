@@ -32,7 +32,7 @@ export const ServicesPage = () => {
         </Typography>
         <AccordionDetails sx={{ textAlign: 'justify' }}>
           <Typography color="primary">
-            Soy un diseñador web con experiencia en HTML, CSS y JavaScript. Mi enfoque se centra en
+            Diseñador web con experiencia en HTML, CSS y JavaScript. Mi enfoque se centra en
             crear interfaces atractivas y funcionales, combinando habilidades técnicas con diseños
             estéticos. Me gusta convertir ideas en sitios web dinámicos y responsivos que cautiven a los
             usuarios y cumplan con los objetivos del cliente.
@@ -54,7 +54,7 @@ export const ServicesPage = () => {
         <AccordionDetails sx={{ textAlign: 'justify' }}>
           <Typography color="primary">
 
-            Soy un desarrollador front-end especializado en el uso de frameworks como React y Angular, con
+            Desarrollador front-end especializado en el uso de frameworks como React y Angular, con
             sólidos conocimientos en JavaScript y TypeScript. Apasionado por crear experiencias de usuario
             dinámicas y funcionales, me destaco en la implementación de interfaces interactivas y optimizadas
             para diversos dispositivos. Con experiencia en el diseño y desarrollo de aplicaciones web modernas,
@@ -76,7 +76,7 @@ export const ServicesPage = () => {
         </Typography>
         <AccordionDetails sx={{ textAlign: 'justify' }}>
           <Typography color="primary">
-            Soy un profesor de informática con amplio dominio en ofimática, especializado en configuración,
+            Profesor de informática con amplio dominio en ofimática, especializado en configuración,
             mantenimiento preventivo y correctivo de computadoras. Experto en programación básica utilizando
             Java y JavaScript, capacitado para enseñar de manera efectiva, objetiva y dinámica tanto a principiantes como a
             estudiantes más avanzados
