@@ -2,7 +2,6 @@ import { AppBar, Container, MenuItem, Toolbar, Typography } from "@mui/material"
 import LaptopIcon from '@mui/icons-material/Laptop';
 import { NavLink } from "react-router-dom";
 
-
 export const Navbar = () => {
   return (
     <>

@@ -26,7 +26,7 @@ export const ServicesPage = () => {
             id="design"
             color="primary"
           >
-            <LanguageIcon sx={{ mr: 1}}/>
+            <LanguageIcon sx={{ mr: 1 }} />
             Diseño web
           </AccordionSummary>
         </Typography>
@@ -47,7 +47,7 @@ export const ServicesPage = () => {
             aria-controls="service2-content"
             id="react"
           >
-            <LogoDevIcon sx={{ mr: 1}}/>
+            <LogoDevIcon sx={{ mr: 1 }} />
             React
           </AccordionSummary>
         </Typography>

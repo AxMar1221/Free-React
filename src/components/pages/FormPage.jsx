@@ -50,7 +50,7 @@ export const FormPage = () => {
                     margin="dense"
                     fullWidth
                     variant="outlined"
-                    color="success"
+                    color="error"
                     helperText="Campo obligatorio"
                     onChange={(ev) => setName(ev.target.value)}
                   />
@@ -66,12 +66,12 @@ export const FormPage = () => {
                     margin="dense"
                     fullWidth
                     variant="outlined"
-                    color="success"
+                    color="error"
                     helperText="Campo obligatorio"
                     onChange={validatePhone}
                   />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
 
                   <TextField
                     required
@@ -81,7 +81,7 @@ export const FormPage = () => {
                     margin="dense"
                     fullWidth
                     variant="outlined"
-                    color="success"
+                    color="error"
                     helperText="Campo obligatorio"
                     onChange={(ev) => setEmail(ev.target.value)}
                   />
@@ -95,7 +95,7 @@ export const FormPage = () => {
                     margin="dense"
                     fullWidth
                     variant="outlined"
-                    color="success"
+                    color="error"
                     onChange={(ev) => setMessage(ev.target.value)}
                   />
                 </Grid>
@@ -103,7 +103,7 @@ export const FormPage = () => {
                   <Button
                     margin="dense"
                     variant="contained"
-                    color="success"
+                    color="error"
                     startIcon={<SendRounded />}
                     onClick={() =>
                       handleSubmit(

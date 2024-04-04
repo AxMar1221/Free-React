@@ -21,7 +21,7 @@ export const Footer = () => {
               <GitHub />
             </IconButton>
           </Link>
-          <Link href="https://wa.me/522222592173?text=Hola%20Tachi%20que%20servicios%20ofreces" rel="noopener noreferrer" sx={{ marginLeft: 1 }}>
+          <Link href="https://wa.me/522222592173?text=Hola%20Tachi%20quiero%20ponerme%20en%20contacto%20contigo" target="_blank" rel="noopener noreferrer" sx={{ marginLeft: 1 }}>
             <IconButton arial-label="WhatsApp">
               <WhatsApp />
             </IconButton>

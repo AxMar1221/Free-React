@@ -9,10 +9,9 @@ export const ProjectsPage = () => {
 
     const [value, setValue] = useState(0);
 
-    const handleChange = (event, newValue) => {
+    const handleChange = (newValue) => {
         setValue(newValue);
     };
-
 
     return (
         <div className="container">
@@ -31,67 +30,37 @@ export const ProjectsPage = () => {
                     <img style={{ maxWidth: '650px', padding: '15px' }} src={projects.project[value].img} alt={`Proyecto ${value + 1}`} />
                 </Link>
 
-            {projects.project.map((project, idx) => {
-                if ( idx === value ) {
-                    return (
-                    <div key={idx}>
-                        <Link to={project.repo} className='btn'>
-                            <Button
-                                size='large'
-                                variant='contained'
-                                color='error'
-                                startIcon={<GitHubIcon />}
-                                >
-                                Repositorio
-                            </Button>
-                        </Link>
-                        <Link to={project.demo} className='btn'>
-                            <Button
-                                size='large'
-                                variant='contained'
-                                color='error'
-                                startIcon={<TabIcon />}
-                                >
-                                DEMO
-                            </Button>
-                        </Link>
-                    </div>
-                    )
-                }
-                return null;
-            })}
+                {projects.project.map((project, idx) => {
+                    if (idx === value) {
+                        return (
+                            <div key={idx}>
+                                <Link to={project.repo} className='btn'>
+                                    <Button
+                                        size='large'
+                                        variant='contained'
+                                        color='error'
+                                        startIcon={<GitHubIcon />}
+                                    >
+                                        Repositorio
+                                    </Button>
+                                </Link>
+                                <Link to={project.demo} className='btn'>
+                                    <Button
+                                        size='large'
+                                        variant='contained'
+                                        color='error'
+                                        startIcon={<TabIcon />}
+                                    >
+                                        DEMO
+                                    </Button>
+                                </Link>
+                            </div>
+                        )
+                    }
+                    return null;
+                })}
             </Box>
         </div>
     );
 };
 
-
-// {projects.project.map((project, idx) => {
-//     if (idx === value) {
-//         return (
-//             <div key={idx}>
-//                 <Link to={project.repo} className="btn">
-//                     <Button
-//                         size="small"
-//                         variant="contained"
-//                         color="success"
-//                         startIcon={<CodeIcon />}
-//                     >
-//                         Repositorio
-//                     </Button>
-//                 </Link>
-//                 <Link to={project.demo} className="btn">
-//                     <Button
-//                         size="small"
-//                         variant="contained"
-//                         color="success"
-//                         startIcon={<EditIcon />}
-//                     >
-//                         Ver demo
-//                     </Button>
-//                 </Link>
-//             </div>
-//         );
-//     }
-//     return null; // Oculta los botones para proyectos no seleccionados
-// })}
