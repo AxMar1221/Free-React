@@ -1,50 +1,80 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
+import { Button, Card, CardActions, CardMedia, Typography } from "@mui/material";
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const HeroPage = () => {
   const [currentImgIdx, setCurrentImgIdx] = useState(0);
+  const [currentPercent, setCurrentPercent] = useState(0);
+  const [targetPercent, setTargetPercent] = useState(0);
+  const [timerId, setTimerId] = useState(null);
 
   const imgUrls = [
-    { url: 'src/assets/vscode.png', name: 'Maker1' },
-    { url: 'src/assets/vscode.png', name: 'Maker2' },
-    { url: 'src/assets/vscode.png', name: 'Maker3' },
-    { url: 'src/assets/vscode.png', name: 'Maker4' }
-  ]
+    { url: 'src/assets/html5.svg', name: 'HTML5', percent: 90 },
+    { url: 'src/assets/css3.svg', name: 'CSS3', percent: 80 },
+    { url: 'src/assets/javascript.svg', name: 'JavaScript', percent: 80 },
+    { url: 'src/assets/typescript.svg', name: 'TypeScript', percent: 70 },
+    { url: 'src/assets/react.svg', name: 'React', percent: 70 },
+    { url: 'src/assets/node-js.svg', name: 'Node.js', percent: 50 },
+    { url: 'src/assets/firebase.svg', name: 'Firebase', percent: 50 },
+    { url: 'src/assets/git.svg', name: 'Git', percent: 80 }
+  ];
+
+  const changeImage = (index) => {
+    setCurrentPercent(0);
+    setTargetPercent(imgUrls[index].percent); 
+    const increment = Math.ceil(imgUrls[index].percent / 50); 
+    setTimerId(setInterval(() => {
+      setCurrentPercent((prevPercent) => {
+        if (prevPercent + increment >= imgUrls[index].percent) {
+          clearInterval(timerId); 
+          return imgUrls[index].percent;
+        }
+        return prevPercent + increment;
+      });
+    }, 10));
+    setCurrentImgIdx(index);
+  };
 
   const goToNextSlide = () => {
     const newIndex = (currentImgIdx + 1) % imgUrls.length;
-    setCurrentImgIdx(newIndex);
+    changeImage(newIndex);
   };
 
   const goToPreviousSlide = () => {
     const newIndex = (currentImgIdx - 1 + imgUrls.length) % imgUrls.length;
-    setCurrentImgIdx(newIndex);
+    changeImage(newIndex);
   };
+
+  const currentImage = imgUrls[currentImgIdx];
+
+  useEffect(() => {
+    return () => clearInterval(timerId);
+  }, [timerId]);
 
   return (
     <div className="container">
-      <Typography color="primary" variant="h5" align="center">
+      <Typography color="error" variant="h5" align="center">
         <PersonSearchIcon color="error" fontSize="large" sx={{ mr: 1 }} />
-        Sobre mi
+        Tecnologías
       </Typography>
       <Card>
-        <CardMedia
-          component='img'
-          image={imgUrls[currentImgIdx].url}
-          alt={imgUrls[currentImgIdx].name}
-          style={{ width: '700px', height: '500px', objectFit: 'contain', margin: 'auto'}}
-        />
-        <CardContent>
-          <Typography>
-            {imgUrls[currentImgIdx].name}
+        <div className="image-container">
+          <CardMedia
+            component='img'
+            image={currentImage.url}
+            alt={currentImage.name}
+            sx={{ height: '300px'}}
+            style={{  width: 'auto', display: 'block', margin: 'auto' }}
+          />
+          <Typography color="error" variant="h4" align="center">
+            {currentPercent}%
           </Typography>
-        </CardContent>
+        </div>
         <CardActions style={{ justifyContent: 'center' }}>
           <Button variant='contained' color='error' size='large' onClick={goToPreviousSlide}>Previous</Button>
           <Button variant='contained' color='error' size='large' onClick={goToNextSlide}>Next</Button>
         </CardActions>
       </Card>
     </div>
-  )
-}
+  );
+};
