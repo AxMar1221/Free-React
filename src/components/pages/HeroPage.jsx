@@ -9,14 +9,14 @@ export const HeroPage = () => {
   const [timerId, setTimerId] = useState(null);
 
   const imgUrls = [
-    { url: '/assets/html5.svg', name: 'HTML5', percent: 90 },
-    { url: '/assets/css3.svg', name: 'CSS3', percent: 80 },
-    { url: '/assets/javascript.svg', name: 'JavaScript', percent: 80 },
-    { url: '/assets/typescript.svg', name: 'TypeScript', percent: 70 },
-    { url: '/assets/react.svg', name: 'React', percent: 70 },
-    { url: '/assets/node-js.svg', name: 'Node.js', percent: 50 },
-    { url: '/assets/firebase.svg', name: 'Firebase', percent: 50 },
-    { url: '/assets/git.svg', name: 'Git', percent: 80 }
+    { url: 'assets/html5.svg', name: 'HTML5', percent: 90 },
+    { url: 'assets/css3.svg', name: 'CSS3', percent: 80 },
+    { url: 'assets/javascript.svg', name: 'JavaScript', percent: 80 },
+    { url: 'assets/typescript.svg', name: 'TypeScript', percent: 70 },
+    { url: 'assets/react.svg', name: 'React', percent: 70 },
+    { url: 'assets/node-js.svg', name: 'Node.js', percent: 50 },
+    { url: 'assets/firebase.svg', name: 'Firebase', percent: 50 },
+    { url: 'assets/git.svg', name: 'Git', percent: 80 }
   ];
 
   const changeImage = (index) => {
