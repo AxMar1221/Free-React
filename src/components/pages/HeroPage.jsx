@@ -1,5 +1,7 @@
 import { Button, Card, CardActions, CardMedia, Typography } from "@mui/material";
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import { useState, useEffect } from "react";
 
 export const HeroPage = () => {
@@ -9,24 +11,24 @@ export const HeroPage = () => {
   const [timerId, setTimerId] = useState(null);
 
   const imgUrls = [
-    { url: 'assets/html5.svg', name: 'HTML5', percent: 90 },
-    { url: 'assets/css3.svg', name: 'CSS3', percent: 80 },
-    { url: 'assets/javascript.svg', name: 'JavaScript', percent: 80 },
-    { url: 'assets/typescript.svg', name: 'TypeScript', percent: 70 },
-    { url: 'assets/react.svg', name: 'React', percent: 70 },
-    { url: 'assets/node-js.svg', name: 'Node.js', percent: 50 },
-    { url: 'assets/firebase.svg', name: 'Firebase', percent: 50 },
-    { url: 'assets/git.svg', name: 'Git', percent: 80 }
+    { url: 'src/assets/html5.svg', name: 'HTML5', percent: 90 },
+    { url: 'src/assets/css3.svg', name: 'CSS3', percent: 80 },
+    { url: 'src/assets/javascript.svg', name: 'JavaScript', percent: 80 },
+    { url: 'src/assets/typescript.svg', name: 'TypeScript', percent: 70 },
+    { url: 'src/assets/react.svg', name: 'React', percent: 70 },
+    { url: 'src/assets/node-js.svg', name: 'Node.js', percent: 50 },
+    { url: 'src/assets/firebase.svg', name: 'Firebase', percent: 50 },
+    { url: 'src/assets/git.svg', name: 'Git', percent: 80 }
   ];
 
   const changeImage = (index) => {
     setCurrentPercent(0);
-    setTargetPercent(imgUrls[index].percent); 
-    const increment = Math.ceil(imgUrls[index].percent / 50); 
+    setTargetPercent(imgUrls[index].percent);
+    const increment = Math.ceil(imgUrls[index].percent / 50);
     setTimerId(setInterval(() => {
       setCurrentPercent((prevPercent) => {
         if (prevPercent + increment >= imgUrls[index].percent) {
-          clearInterval(timerId); 
+          clearInterval(timerId);
           return imgUrls[index].percent;
         }
         return prevPercent + increment;
@@ -63,16 +65,20 @@ export const HeroPage = () => {
             component='img'
             image={currentImage.url}
             alt={currentImage.name}
-            sx={{ height: '300px'}}
-            style={{  width: 'auto', display: 'block', margin: 'auto' }}
+            sx={{ height: '300px' }}
+            style={{ width: 'auto', display: 'block', margin: 'auto' }}
           />
           <Typography color="error" variant="h4" align="center">
             {currentPercent}%
           </Typography>
         </div>
         <CardActions style={{ justifyContent: 'center' }}>
-          <Button variant='contained' color='error' size='large' onClick={goToPreviousSlide}>Previous</Button>
-          <Button variant='contained' color='error' size='large' onClick={goToNextSlide}>Next</Button>
+          <Button variant='contained' color='error' size='large' onClick={goToPreviousSlide}>
+            <SkipPreviousIcon fontSize="large" sx={{ mr: 1 }} />Anterior
+          </Button>
+          <Button variant='contained' color='error' size='large' onClick={goToNextSlide}>
+            Siguiente<SkipNextIcon fontSize="large" sx={{ mr: 1 }} />
+          </Button>
         </CardActions>
       </Card>
     </div>
