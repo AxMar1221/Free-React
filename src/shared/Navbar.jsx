@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export const Navbar = () => {
   return (
     <>
-      <AppBar position="static" color="success">
+      <AppBar position="static" color="error">
         <Container maxWidth="xl">
           <Toolbar disableGutters >
             <LaptopIcon sx={{ mr: 1 }} />
@@ -48,9 +48,9 @@ export const Navbar = () => {
                 className={({ isActive }) =>
                   `nav-item nav-link ${isActive ? "active" : ""}`
                 }
-                to="/form"
+                to="/projects"
               >
-                Contacto
+                Proyectos y Demos
               </NavLink>
             </MenuItem>
             <MenuItem>
@@ -58,9 +58,9 @@ export const Navbar = () => {
                 className={({ isActive }) =>
                   `nav-item nav-link ${isActive ? "active" : ""}`
                 }
-                to="/projects"
+                to="/form"
               >
-                Proyectos y Demos
+                Contacto
               </NavLink>
             </MenuItem>
           </Toolbar>
