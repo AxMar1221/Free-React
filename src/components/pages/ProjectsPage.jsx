@@ -49,7 +49,13 @@ export const ProjectsPage = () => {
                             if (idx === value) {
                                 return (
                                     <div key={idx}>
-                                        <Link to={project.repo} className='btn'>
+                                        <Typography color="primary" variant='h5' align="center">
+                                            Tecnologías:
+                                        </Typography>
+                                        <Typography color="error" variant='h6' align="center">
+                                            {project.technology.join(' - ')}
+                                        </Typography>
+                                        <Link to={project.repo} className='btn' target='_blank'>
                                             <Button
                                                 size='large'
                                                 variant='contained'
@@ -59,7 +65,7 @@ export const ProjectsPage = () => {
                                                 Repositorio
                                             </Button>
                                         </Link>
-                                        <Link to={project.demo} className='btn'>
+                                        <Link to={project.demo} className='btn' target='_blank'>
                                             <Button
                                                 size='large'
                                                 variant='contained'
