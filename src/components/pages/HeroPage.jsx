@@ -54,7 +54,7 @@ export const HeroPage = () => {
   }, [timerId]);
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       <Typography color="error" variant="h5" align="center">
         <PersonSearchIcon color="error" fontSize="large" sx={{ mr: 1 }} />
         Tecnologías

@@ -28,7 +28,7 @@ export const ProjectsPage = () => {
     };
 
     return (
-        <div className="container">
+        <div className="container  mt-5">
             <Typography color="primary" variant='h5' align="center">
                 Mis proyectos
             </Typography>

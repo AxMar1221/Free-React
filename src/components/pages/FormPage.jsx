@@ -58,7 +58,7 @@ export const FormPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       <Typography color="primary" variant='h5' align="center">
         Contácteme llenando el formulario
       </Typography>

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export const Navbar = () => {
   return (
     <>
-      <AppBar position="static" color="error">
+      <AppBar position="fixed" color="error">
         <Container maxWidth="xl">
           <Toolbar disableGutters >
             <LaptopIcon sx={{ mr: 1 }} />
