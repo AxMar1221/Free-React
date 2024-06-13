@@ -19,7 +19,6 @@ export const HeroPage = () => {
       const techData = [];
       querySnapshot.forEach((doc) => {
         techData.push(doc.data());
-        console.log(techData)
       });
       setTechData(techData);
     };

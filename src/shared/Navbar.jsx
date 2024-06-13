@@ -1,4 +1,4 @@
-import { AppBar, Container, MenuItem, Toolbar, Typography } from "@mui/material"
+import { AppBar, Box, Button, Container, MenuItem, Toolbar, Typography } from "@mui/material"
 import LaptopIcon from '@mui/icons-material/Laptop';
 import { NavLink } from "react-router-dom";
 
@@ -23,6 +23,7 @@ export const Navbar = () => {
             >
               Profe Tachi
             </Typography>
+            <Box sx={{ flexGrow: 1, display: 'flex' }}>
             <MenuItem>
               <NavLink
                 className={({ isActive }) =>
@@ -63,6 +64,15 @@ export const Navbar = () => {
                 Contacto
               </NavLink>
             </MenuItem>
+            </Box>
+            <NavLink
+              className={({ isActive}) =>
+              `nav-item nav-link ${isActive ? 'active' : ''}`
+            }
+              to='/login'
+            >
+              <Button color="inherit">Iniciar sesión</Button>
+            </NavLink>
           </Toolbar>
         </Container>
       </AppBar>
